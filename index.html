@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование по Linux</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Тестирование по Linux</h1>
+            <p>Выберите модуль для прохождения теста</p>
+        </header>
+        
+        <div class="modules-grid">
+            <div class="module-card" data-module="1">
+                <h3>Модуль 1</h3>
+                <p>Основы операционных систем</p>
+                <span class="question-count">25 вопросов</span>
+            </div>
+            <div class="module-card" data-module="2">
+                <h3>Модуль 2</h3>
+                <p>UNIX и Linux</p>
+                <span class="question-count">25 вопросов</span>
+            </div>
+            <div class="module-card" data-module="3">
+                <h3>Модуль 3</h3>
+                <p>Файловая система Linux</p>
+                <span class="question-count">25 вопросов</span>
+            </div>
+            <div class="module-card" data-module="4">
+                <h3>Модуль 4</h3>
+                <p>Основные команды</p>
+                <span class="question-count">25 вопросов</span>
+            </div>
+            <div class="module-card" data-module="5">
+                <h3>Модуль 5</h3>
+                <p>Права доступа и пользователи</p>
+                <span class="question-count">25 вопросов</span>
+            </div>
+            <div class="module-card" data-module="6">
+                <h3>Модуль 6</h3>
+                <p>Работа с файлами</p>
+                <span class="question-count">20 вопросов</span>
+            </div>
+            <div class="module-card" data-module="7">
+                <h3>Модуль 7</h3>
+                <p>Перенаправление потоков</p>
+                <span class="question-count">25 вопросов</span>
+            </div>
+            <div class="module-card" data-module="8">
+                <h3>Модуль 8</h3>
+                <p>Логические операторы</p>
+                <span class="question-count">20 вопросов</span>
+            </div>
+            <div class="module-card" data-module="9">
+                <h3>Модуль 9</h3>
+                <p>Файловые системы и монтирование</p>
+                <span class="question-count">20 вопросов</span>
+            </div>
+            <div class="module-card" data-module="10">
+                <h3>Модуль 10</h3>
+                <p>Управление пакетами</p>
+                <span class="question-count">25 вопросов</span>
+            </div>
+            <div class="module-card" data-module="11">
+                <h3>Модуль 11</h3>
+                <p>Процессы</p>
+                <span class="question-count">25 вопросов</span>
+            </div>
+            <div class="module-card" data-module="12">
+                <h3>Модуль 12</h3>
+                <p>Сетевая настройка</p>
+                <span class="question-count">20 вопросов</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="test-container" class="test-container hidden">
+        <div class="test-header">
+            <h2 id="test-title">Тест</h2>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="question-counter">
+                <span id="current-question">1</span> / <span id="total-questions">25</span>
+            </div>
+        </div>
+        
+        <div class="question-container">
+            <h3 id="question-text">Вопрос</h3>
+            <div class="answers-container" id="answers-container">
+                <!-- Ответы будут добавлены динамически -->
+            </div>
+        </div>
+        
+        <div class="test-controls">
+            <button id="prev-btn" class="btn btn-secondary">Назад</button>
+            <button id="next-btn" class="btn btn-primary">Далее</button>
+            <button id="finish-btn" class="btn btn-success hidden">Завершить</button>
+        </div>
+    </div>
+
+    <div id="results-container" class="results-container hidden">
+        <h2>Результаты теста</h2>
+        <div class="score-display">
+            <div class="score-circle">
+                <span id="score-percentage">0%</span>
+            </div>
+            <p>Правильных ответов: <span id="correct-answers">0</span> из <span id="total-answers">0</span></p>
+        </div>
+        <div class="results-actions">
+            <button id="retry-btn" class="btn btn-primary">Пройти заново</button>
+            <button id="back-to-modules-btn" class="btn btn-secondary">К модулям</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
