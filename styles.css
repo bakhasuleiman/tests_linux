@@ -268,6 +268,105 @@ header p {
     display: none !important;
 }
 
+/* Анимация появления */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.test-container, .results-container {
+  animation: fadeIn 0.5s;
+}
+
+.question-container {
+  background: #f8f9ff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(102,126,234,0.08);
+  padding: 32px 24px 24px 24px;
+  margin-bottom: 30px;
+  transition: box-shadow 0.3s;
+}
+
+.answers-container {
+  margin-top: 10px;
+}
+
+.answer-option {
+  font-size: 1.1rem;
+  padding: 18px 24px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(102,126,234,0.04);
+}
+
+.answer-option.selected {
+  border-color: #667eea;
+  background: #e8f0ff;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 4px 16px rgba(102,126,234,0.10);
+}
+
+.answer-option.correct {
+  border-color: #28a745;
+  background: #d4edda;
+  color: #155724;
+}
+
+.answer-option.incorrect {
+  border-color: #dc3545;
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.answer-option.selected::before {
+  content: '\2713';
+  color: #667eea;
+  font-size: 1.3em;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.progress-bar {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+.progress-percent {
+  position: absolute;
+  right: 10px;
+  top: -28px;
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.btn {
+  font-size: 1.1rem;
+  padding: 16px 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn .btn-icon {
+  font-size: 1.3em;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -304,4 +403,19 @@ header p {
         height: 120px;
         font-size: 1.5rem;
     }
+} 
+
+@media (max-width: 600px) {
+  .question-container {
+    padding: 16px 6px 12px 6px;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 12px 10px;
+  }
+  .progress-percent {
+    font-size: 1rem;
+    right: 2px;
+    top: -22px;
+  }
 } 
